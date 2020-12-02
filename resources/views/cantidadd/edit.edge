@@ -1,0 +1,46 @@
+@layout('layout.app')
+
+@section('content')
+
+{{css ('%PUBLIC_URL%/manifest.json')}}
+{{css ('%PUBLIC_URL%/manifest.json')}}
+{{css ('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css')}}
+{{css ('style.css')}}
+<p>
+  ¿<strong>{{auth.user.username}}</strong> Quieres modificar el informe?
+</p>
+
+<div className="animateme">
+  <ul className="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+
+    <form action="/cantidadd/{{cantidadd:id}}?_method=PUT"  >
+
+    {{csrfField()}}
+         <input id="dia" name="dia"></input>
+         <input id="fecha" name="fecha" type="date"></input>
+         <input id="horasentrada" name="horasentrada" type="time"></input>
+         <input id="horassalida" name="horassalida" type="time"></input>
+         <input id="horasservicio" name="horasservicio" type="number"></input>
+         <input id="horasviaje" name="horasviaje"></input>
+         <input id="km" name="km" type="number"></input>
+         <input id="comida" name="comida" type="checkbox" id="scales" name="scales"></input>
+         <input id="percrocta" name="percrocta" type="checkbox" id="scales" name="scales"></input>
+      <button className="btn btn-primary" type="submit">Submit</button>
+    </form>
+@endsection

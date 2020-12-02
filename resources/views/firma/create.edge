@@ -1,0 +1,100 @@
+@layout('layout.app')
+
+@section('content')
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css" />
+    <script   src="../firmacliente.js" />
+    <script   src="../firmatecnico.js" />
+
+    <div>
+    </div>
+      <p>
+        Welcome <strong>{{ auth.user.username }}</strong>!
+      </p>
+
+          <div id="component-example"></div>
+          <script src="dist/app.js"></script>
+
+         <div class="animateme">
+            <ul class="bg-bubbles">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+    <div class="container information">
+        <div class="row">
+          <div class="row col-5 logo">
+          </div>
+          <div class="row col info">
+              <h5>GESCA AUTOMATISMOS S.L.L.</h5>
+                <p>www.gesca.es<br>
+                gesca@gesca.es<br>
+                C/ Soleria, 44 23400 Úbeda (Jáen)<br>
+                /Fax +34 953 751 286 CIF: B23547433</p>
+          </div>
+        </div>
+      </div>
+
+<p>
+  Draw your signature in the box below
+</p>
+
+
+    </div>
+<div className="container">
+  <div className="row">
+    <div className="col-4">Estoy conforme con los trabajos realizados y la presente figuración
+      <div className="col-12 firma">Fecha:</div>
+    </div>
+    <div className="col-4">Firma cliente:
+      {{ csrfField() }}
+      <canvas id = "paintcliente" width = "500" height = "400"></canvas>
+      <form method = "POST" action = "/firma" enctype = "multipart/form-data">
+        <input id="firmacliente" id = "canvasData" name = "canvasData"  />
+        <input  type = "button" id = "clear" name = "clear" value = "Clean" />
+      </form>
+    </div>
+
+      <div className="col-12 firmadopor">Firmado por:__________________________
+    </div>
+    <div className="col-4">Firma técnico:
+      {{ csrfField() }}
+      <canvas id = "painttecnico" width = "500" height = "400"></canvas>
+      <form method = "POST" action = "/firma" enctype = "multipart/form-data">
+        <input id="firmatecnico" id = "canvasData" name = "canvasData"  />
+        <input  type = "button" id = "clear" name = "clear" value = "Clean" />
+        <button class="btn btn-primary"  id="save" type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+
+    </div>
+  </div>
+</div>
+</form>
+
+<script src="{{ '../public/app.js' }} "></script>
+        <script src=" {{ 'https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" '}} "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="signature_pad.umd.js"></script>
+        {{ script('signature_pad.umd.js') }}
+        <script src="{{ 'app.js' }} "></script>
+        <script src="{{ 'signature_pad.umd.js' }} "></script>
+
+@endsection

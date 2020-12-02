@@ -1,0 +1,19 @@
+@layout('layout.app')
+
+@section('content')
+<h1>Edit report</h1>
+    <form action="/report/{{report.id}}?_method=PUT" method="post">
+    {{csrfField()}}
+    <div class = row>
+      <div class="col">
+
+          <div class="form group">
+            <input type="text" value="{{report.numerodeproyecto}}"  >
+            <input type="text" value="{{report.numerodedocumento}}">
+
+          </div>
+        </<div>
+      <button class="btn btn-danger" type="submit">Update</button>
+    </div>
+</form>
+@endsection

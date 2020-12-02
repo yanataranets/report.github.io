@@ -1,0 +1,16 @@
+@layout('layout.app')
+@section('content')
+<h1>wooorks index page</h1>
+<div class="row"
+@each(report in reports)
+<div class="card text-center col-md-4>
+<div class="card-body ">
+<div class="card"<h5>{{report.numerodeproyecto}}</h5></div>
+<div class="card md-5">{{report.numerodedocumento}}</div>
+
+<a href="/report/{{report.id}}/edit" class="btn btn-warning card-link btn-sm">Edit</a>
+<a href="report/{{report.id}}" class="btn btn-success card-link btn-sm">Show</a>
+
+
+@endeach
+@endsection
