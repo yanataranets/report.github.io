@@ -13,7 +13,6 @@
 |
 */
 
-const Cantidadd = require("@adonisjs/lucid/src/Lucid/Model");
 const Route = use('Route')
 
 Route.on('/').render('/report/index').as('home').middleware(['auth'])

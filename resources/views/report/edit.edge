@@ -7,7 +7,7 @@
 
 
 <p>
-  ¿<strong>{{auth.user.username }}</strong> Quieres modificar el informe?
+  ¿<strong>{{auth.user.username }} </strong> Quieres modificar el informe?
 </p>
 <div class="animateme">
   <ul class="bg-bubbles">
@@ -86,15 +86,62 @@
           <textarea id="trabajosrealizados" name="trabajosrealizados" class="form-control" rows="3" type="text"></textarea>
         </div>
 
-          <input id="dia" name="dia"></input>
-          <input id="fecha" name="fecha" type="date"></input>
-          <input id="horasentrada" name="horasentrada" type="time"></input>
-          <input id="horassalida" name="horassalida" type="time"></input>
-          <input id="horasservicio" name="horasservicio" type="number"></input>
-          <input id="horasviaje" name="horasviaje"></input>
-          <input id="km" name="km" type="number"></input>
-          <input id="comida" name="comida" type="checkbox" id="scales" name="scales"></input>
-          <input id="percrocta" name="percrocta" type="checkbox" id="scales" name="scales"></input>
+  <table className="responsive table col-10 ">
+    <thead className="thead-dark">
+    <tr>
+      <th scope="row" colSpan="2"></th>
+      <th scope="row" colSpan="3">Trabajos en planta</th>
+      <th scope="row" colSpan="4">Dietas y desplazamiento</th>
+    </tr>
+    <tr>
+      <th scope="col">Día</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Horas Entrada</th>
+      <th scope="col">Horas Salida</th>
+      <th scope="col">Horas Servicio</th>
+      <th scope="col">Horas viaje</th>
+      <th scope="col">KM</th>
+      <th scope="col">Comida</th>
+      <th scope="col">Percrocta</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th className="col">
+      <input id="dia" name="dia"></input>
+    </th>
+    <td className="col">
+      <input id="fecha" name="fecha" type="date"></input>
+    </td>
+
+    <td className="col">
+      <input id="horasentrada" name="horasentrada" type="time"></input>
+    </td>
+
+    <td className="col">
+      <input id="horassalida" name="horassalida" type="time"></input>
+    </td>
+
+    <td className="col">
+      <input id="horasservicio" name="horasservicio" type="number"></input>
+    </td>
+
+    <td className="col">
+      <input id="horasviaje" name="horasviaje"></input>
+    </td>
+
+    <td className="col">
+      <input id="km" name="km" type="number"></input>
+    </td>
+
+    <td className="col">
+      <input id="comida" name="comida" type="checkbox" id="scales" name="scales"></input>
+    </td>
+
+    <td className="col">
+      <input id="percrocta" name="percrocta" type="checkbox" id="scales" name="scales"></input>
+    </td>
+    </tbody>
+  </table>
 
 
         <table className="table col thead-dark" id="material">
