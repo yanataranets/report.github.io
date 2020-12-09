@@ -33,6 +33,10 @@ class FirmatecnicoController {
     response.redirect('/firmacliente/{{firmacliente.id}}/edit');
 
   }
+  async show({view, params }){
+    const firmatecnico = await Firmatecnico.find(params.id)
+    return view.render('/report/show', {firmatecnico: firmatecnico});
+  }
 
 
 }

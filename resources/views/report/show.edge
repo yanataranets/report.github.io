@@ -37,7 +37,7 @@
     <li></li>
   </ul>
 </div>
-<div class="container information">
+<div id="information" class="container information">
   <div class="row">
     <div class="row col-5 logo">
     </div>
@@ -122,7 +122,7 @@
       <textarea id="trabajosrealizados" name="trabajosrealizados" class="form-control" rows="3" type="text" value="{{report.trabajosrealizados}}"></textarea>
     </div>
 
-    <table className="responsive table col-10 ">
+    <table className="responsive table col-10 " id="my-table">
       <thead className="thead-dark">
       <tr>
         <th scope="row" colSpan="2"></th>
@@ -200,33 +200,45 @@
       </tr>
       </tbody>
     </table>
-
 </form>
 </div>
-<div>
-{{firmatecnico.firmatecnico}}
-<script>
-canvas = document.getElementById('firmatecnico')
-const dataURL = canvas.toDataURL(('image/png', 0.1)
-console.log(dataURL)
-</script>
+
+
 </div>
 <button id="btn-print"  >Pdf</button>
 
-</body>
-
-<script>
+ <script>
 
   $('#btn-print').click(() => {
-const doc = new jsPDF();
+const doc = new jsPDF('p','pt', 'a4', true);
 
+
+doc.text('{{auth.user.username }}', 5, 30);
+doc.text('{{report.numerodeproyecto}} ', 15, 55);
+doc.text('{{report.algo}} ', 150, 55);
+doc.text('{{report.numerodedocumento}} ', 300, 55);
+doc.text('{{report.num}} ', 450, 55);
+doc.text('{{report.ed}} ', 600, 55);
+
+doc.text('{{report.cliente}} ',  20, 125);
+doc.text('{{report.cif}} ',  20, 125);
+doc.text('{{report.dirrecion}} ', 20, 125);
+doc.text('{{report.codigopostal}} ', 20, 140);
+doc.text('{{report.poblacion}} ');
+doc.text('{{report.provincia}} ');
+doc.text('{{report.telefono}} ');
+doc.text('{{report.tecnico}} ');
+doc.text('{{report.trabajosrealizados}} ');
 doc.addHTML(document.body,function() {
-doc.save("report.pdf");
+console.log('pdf generated');
 });
-
+doc.save("report.pdf");
 
 });
 </script>
+
+</body>
+
 
 @endsection
 

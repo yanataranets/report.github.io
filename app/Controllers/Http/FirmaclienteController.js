@@ -33,6 +33,10 @@ class FirmaclienteController {
     response.redirect('/report');
 
   }
+  async show({view, params }){
+    const firmacliente = await Firmacliente.find(params.id)
+    return view.render('/firmacliente/show', {firmacliente: firmacliente});
+  }
 
 
 }
