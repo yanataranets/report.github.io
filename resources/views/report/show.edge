@@ -203,24 +203,28 @@
 
 </form>
 </div>
+<div>
+{{firmatecnico.firmatecnico}}
+<script>
+canvas = document.getElementById('firmatecnico')
+const dataURL = canvas.toDataURL(('image/png', 0.1)
+console.log(dataURL)
+</script>
+</div>
 <button id="btn-print"  >Pdf</button>
+
 </body>
 
 <script>
 
   $('#btn-print').click(() => {
-  function genPDF() {
-    var element = document.getElementById('pdfContent');
-    var opt = {
-      margin:       1,
-      filename:     'myfile.pdf',
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
+const doc = new jsPDF();
 
-// New Promise-based usage:
-    html2pdf().from(element).set(opt).save();
-  }
+doc.addHTML(document.body,function() {
+doc.save("report.pdf");
+});
+
+
 });
 </script>
 

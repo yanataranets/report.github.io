@@ -81,6 +81,3 @@ if(window.addEventListener) {
   },false);
 
 }
-// canvas = documet.getElementById('firma')
-// const dataURL = canvas.toDataURL()
-// console.log(dataURL)
