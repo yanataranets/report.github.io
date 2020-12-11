@@ -214,21 +214,230 @@
 </div>
 <button id="btn-print"  >Pdf</button>
 
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-     <script>
-         $("#btn-print").live("click", function () {
-             var divContents = $("#pdfContent").html();
-             var printWindow = window.open('', '', 'height=400,width=800');
-             printWindow.document.write('<html><head><title>Report</title>');
-             printWindow.document.write('<body>');
-             printWindow.document.write(divContents);
-             printWindow.document.write('</body>');
-             printWindow.document.close();
-             printWindow.print();
-         });
-     </script>
 
 </body>
+ <script>
+var generateData = function(amount) {
+  var result = [];
+  var data = {
+    cliente: "{{report.cliente}}",
+    cif: "{{report.cif}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data.id = (i + 1).toString();
+    result.push(Object.assign({}, data));
+  }
+  return result;
+};
+
+function createHeaders(keys) {
+  var result = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 300,
+      align: "center",
+      padding: 10
+    });
+  }
+  return result;
+}
+
+var headers = createHeaders([
+  "cliente",
+  "cif"
+]);
+
+var generateData2 = function(amount) {
+  var result2 = [];
+  var data2 = {
+    dirrecion: "{{report.dirrecion}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data2.id = (i + 1).toString();
+    result2.push(Object.assign({}, data2));
+  }
+  return result2;
+};
+
+function createHeaders(keys) {
+  var result2 = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result2.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 300,
+      align: "center",
+      padding: 10
+    });
+  }
+  return result2;
+}
+
+var headers2 = createHeaders([
+  "dirrecion"
+]);
+
+var generateData3 = function(amount) {
+  var result3 = [];
+  var data3 = {
+    codigopostal: "{{report.codigopostal}}",
+    poblacion: "{{report.poblacion}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data3.id = (i + 1).toString();
+    result3.push(Object.assign({}, data3));
+  }
+  return result3;
+};
+
+function createHeaders(keys) {
+  var result3 = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result3.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 300,
+      align: "center",
+      padding: 10
+    });
+  }
+  return result3;
+}
+
+var headers3 = createHeaders([
+  "codigopostal",
+  "poblacion"
+]);
+
+var generateData4 = function(amount) {
+  var result4 = [];
+  var data4 = {
+    provincia: "{{report.provincia}}",
+    telefono: "{{report.telefono}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data4.id = (i + 1).toString();
+    result4.push(Object.assign({}, data4));
+  }
+  return result4;
+};
+
+function createHeaders(keys) {
+  var result4 = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result4.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 300,
+      align: "center",
+      padding: 10
+    });
+  }
+  return result4;
+}
+
+var headers4 = createHeaders([
+  "provincia",
+  "telefono"
+]);
+
+var generateData5 = function(amount) {
+  var result5 = [];
+  var data5 = {
+    tecnico: "{{report.tecnico}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data5.id = (i + 1).toString();
+    result5.push(Object.assign({}, data5));
+  }
+  return result5;
+};
+
+function createHeaders(keys) {
+  var result5 = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result5.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 300,
+      align: "center",
+      padding: 10
+    });
+  }
+  return result5;
+}
+
+var headers5 = createHeaders([
+  "tecnico"
+]);
+
+
+var generateData6 = function(amount) {
+  var result6 = [];
+  var data6 = {
+    trabajosrealizados: "{{report.trabajosrealizados}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data6.id = (i + 1).toString();
+    result6.push(Object.assign({}, data6));
+  }
+  return result6;
+};
+
+function createHeaders(keys) {
+  var result6 = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result6.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 300,
+      align: "center",
+      padding: 10
+    });
+  }
+  return result6;
+}
+
+var headers6 = createHeaders([
+  "trabajosrealizados"
+]);
+
+ $('#btn-print').click(() => {
+ const doc = new jsPDF('p','pt', 'a4', true);
+
+ doc.text('{{auth.user.username }}', 5, 30);
+ doc.text('{{report.numerodeproyecto}} ', 20, 55);
+ doc.text('{{report.algo}} ', 150, 55);
+ doc.text('{{report.numerodedocumento}} ', 300, 55);
+ doc.text('{{report.num}} ', 450, 55);
+ doc.text('{{report.ed}} ', 600, 55);
+
+ doc.line(10, 35, 10, 80);
+ doc.line(10, 90, 560, 90);
+
+doc.table(10, 100,  generateData(100), headers, { size: 1 });
+doc.table(10, 150,  generateData2(100), headers2, { size: 1 });
+doc.table(10, 200,  generateData3(100), headers3, { size: 1 });
+doc.table(10, 250,  generateData4(100), headers4, { size: 1 });
+doc.table(10, 300,  generateData5(100), headers5, { size: 1 });
+doc.table(10, 350,  generateData6(100), headers6, { size: 1 });
+
+
+ doc.addHTML(document.body,function() {
+  console.log('pdf generated');
+ });
+ doc.save("report.pdf");
+ });
+
+</script>
 
 
 @endsection
