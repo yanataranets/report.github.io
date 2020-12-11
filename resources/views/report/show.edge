@@ -379,37 +379,6 @@ var headers5 = createHeaders([
 ]);
 
 
-var generateData6 = function(amount) {
-  var result6 = [];
-  var data6 = {
-    trabajosrealizados: "{{report.trabajosrealizados}}"
-  };
-  for (var i = 0; i < 1; i += 1) {
-    data6.id = (i + 1).toString();
-    result6.push(Object.assign({}, data6));
-  }
-  return result6;
-};
-
-function createHeaders(keys) {
-  var result6 = [];
-  for (var i = 0; i < keys.length; i += 1) {
-    result6.push({
-      id: keys[i],
-      name: keys[i],
-      prompt: keys[i],
-      width: 300,
-      align: "center",
-      padding: 10
-    });
-  }
-  return result6;
-}
-
-var headers6 = createHeaders([
-  "trabajosrealizados"
-]);
-
  $('#btn-print').click(() => {
  const doc = new jsPDF('p','pt', 'a4', true);
 
@@ -423,12 +392,15 @@ var headers6 = createHeaders([
  doc.line(10, 35, 10, 80);
  doc.line(10, 90, 560, 90);
 
+
+
 doc.table(10, 100,  generateData(100), headers, { size: 1 });
 doc.table(10, 150,  generateData2(100), headers2, { size: 1 });
 doc.table(10, 200,  generateData3(100), headers3, { size: 1 });
 doc.table(10, 250,  generateData4(100), headers4, { size: 1 });
 doc.table(10, 300,  generateData5(100), headers5, { size: 1 });
-doc.table(10, 350,  generateData6(100), headers6, { size: 1 });
+
+
 
 
  doc.addHTML(document.body,function() {
