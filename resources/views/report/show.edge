@@ -116,14 +116,21 @@
     </br>
   </br>
 
-<!--error -->
-    <div class="form-group trabajorealizado">
-      <h3>Trabajos realizados</h3>
-      <textarea id="trabajosrealizados" name="trabajosrealizados" class="form-control" rows="3" type="text" value="{{report.trabajosrealizados}}"></textarea>
+    <div class="card trabajorealizado" style="width: 100%">
+    <div class="card-body">
+      <h3 class="card-title">Trabajos realizados</h3>
+      <p class="card-text">{{report.trabajosrealizados}}</p>
+    </div>
     </div>
 
-    <table className="responsive table col-10 " id="my-table">
-      <thead className="thead-dark">
+  <br>
+    <br>
+      <br></br>
+    </br>
+  </br>
+
+    <table class="table table-striped responsive   " id="my-table" style="width:100%">
+      <thead class="thead-dark">
       <tr>
         <th scope="row" colSpan="2"></th>
         <th scope="row" colSpan="3">Trabajos en planta</th>
@@ -179,10 +186,10 @@
       </tbody>
     </table>
 
-    <table className="table col thead-dark" id="material">
-      <thead className="thead-dark">
+    <table class="table col thead-dark table table-striped responsive  " id="material">
+      <thead class="thead-dark">
       <tr>
-        <th className="columndetabla" colSpan="2">Material Suministrado</th>
+        <th class="columndetabla" colSpan="2">Material Suministrado</th>
       </tr>
       <tr>
         <th>Cantidad</th>
@@ -207,35 +214,19 @@
 </div>
 <button id="btn-print"  >Pdf</button>
 
- <script>
-
-  $('#btn-print').click(() => {
-const doc = new jsPDF('p','pt', 'a4', true);
-
-
-doc.text('{{auth.user.username }}', 5, 30);
-doc.text('{{report.numerodeproyecto}} ', 15, 55);
-doc.text('{{report.algo}} ', 150, 55);
-doc.text('{{report.numerodedocumento}} ', 300, 55);
-doc.text('{{report.num}} ', 450, 55);
-doc.text('{{report.ed}} ', 600, 55);
-
-doc.text('{{report.cliente}} ',  20, 125);
-doc.text('{{report.cif}} ',  20, 125);
-doc.text('{{report.dirrecion}} ', 20, 125);
-doc.text('{{report.codigopostal}} ', 20, 140);
-doc.text('{{report.poblacion}} ');
-doc.text('{{report.provincia}} ');
-doc.text('{{report.telefono}} ');
-doc.text('{{report.tecnico}} ');
-doc.text('{{report.trabajosrealizados}} ');
-doc.addHTML(document.body,function() {
-console.log('pdf generated');
-});
-doc.save("report.pdf");
-
-});
-</script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script>
+         $("#btn-print").live("click", function () {
+             var divContents = $("#pdfContent").html();
+             var printWindow = window.open('', '', 'height=400,width=800');
+             printWindow.document.write('<html><head><title>Report</title>');
+             printWindow.document.write('<body>');
+             printWindow.document.write(divContents);
+             printWindow.document.write('</body>');
+             printWindow.document.close();
+             printWindow.print();
+         });
+     </script>
 
 </body>
 
