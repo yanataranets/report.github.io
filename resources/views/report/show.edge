@@ -398,14 +398,14 @@ var generateData6 = function(amount) {
   return result6;
 };
 
-function createHeaders6(keys) {
+function createHeaders(keys) {
   var result6 = [];
   for (var i = 0; i < keys.length; i += 1) {
     result6.push({
       id: keys[i],
       name: keys[i],
       prompt: keys[i],
-      width: 300,
+      width: 120,
       align: "center",
       padding: 0
     });
@@ -423,6 +423,39 @@ var headers6 = createHeaders([
   "km",
   "comida",
   "percrocta"
+]);
+
+var generateData7 = function(amount) {
+  var result7 = [];
+  var data7 = {
+    cantidad: "{{report.cantidad}}",
+    descripcion: "{{report.descripcion}}"
+  };
+  for (var i = 0; i < 1; i += 1) {
+    data7.id = (i + 1).toString();
+    result7.push(Object.assign({}, data7));
+  }
+  return result7;
+};
+
+function createHeaders(keys) {
+  var result7 = [];
+  for (var i = 0; i < keys.length; i += 1) {
+    result7.push({
+      id: keys[i],
+      name: keys[i],
+      prompt: keys[i],
+      width: 120,
+      align: "center",
+      padding: 0
+    });
+  }
+  return result7;
+}
+
+var headers7 = createHeaders([
+  "cantidad",
+  "descripcion"
 ]);
 
  $('#btn-print').click(() => {
@@ -445,8 +478,9 @@ doc.table(10, 150,  generateData2(100), headers2, { size: 1 });
 doc.table(10, 200,  generateData3(100), headers3, { size: 1 });
 doc.table(10, 250,  generateData4(100), headers4, { size: 1 });
 doc.table(10, 300,  generateData5(100), headers5, { size: 1 });
-doc.table(10, 350,  generateData6(100), headers6, { size: 2 });
+doc.table(1, 350,  generateData6(50), headers6, { autosize:  true});
 
+doc.table(10, 400,  generateData7(100), headers7, { size: 1 });
 
 
 
