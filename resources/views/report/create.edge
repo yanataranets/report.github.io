@@ -8,76 +8,41 @@
 {{script('app.js')}}
 {{script('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}
 {{script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}
-{{script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')}}
+{{script('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css')}}
 
-      <p>
-        Bienvenido <strong>{{auth.user.username }}</strong>!
-      </p>
-         <div class="animateme">
-            <ul class="bg-bubbles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-    <div class="container information">
-        <div class="row">
-          <div class="row col-5 logo">
-          </div>
-          <div class="row col info">
-              <h5>GESCA AUTOMATISMOS S.L.L.</h5>
-                <p>
-                  www.gesca.es<br/>
-                  gesca@gesca.es<br/>
-                  C/ Soleria, 44 23400 Úbeda (Jáen)<br/>
-                  /Fax +34 953 751 286 CIF: B23547433
-                </p>
-          </div>
-        </div>
-      </div>
 
 <h1>Create report</h1>
 
     <form action="/report" method="post">
     {{ csrfField() }}
           <div class="container">
-            <div class="row ">
-              <label>
-                  <input class="col label-txt" name="numerodeproyecto" id="numerodeproyecto" type="text" placeholder="№ DE PROYECTO" />
+            <div class="row">
+              <label class="col">
+                  <input class=" label-txt" name="numerodeproyecto" id="numerodeproyecto" type="text" placeholder="№ DE PROYECTO" />
                     <div class="line-box">
                         <div class="line"></div>
                     </div>
               </label>
-              <label>
-                <input class="col label-txt" name="algo" type="text" placeholder="Algo"></input>
+              <label class="col">
+                <input class="label-txt" name="algo" type="text" placeholder="Algo"></input>
                   <div class="line-box">
                     <div class="line"></div>
                   </div>
               </label>
-              <label>
-                <input class="col label-txt" name="numerodedocumento" id="numerodedocumento" type="text" placeholder="№ DE DOCUMENTO"></input>
+              <label class="col">
+                <input class="label-txt" name="numerodedocumento" id="numerodedocumento" type="text" placeholder="№ DE DOCUMENTO"></input>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-              <label>
-                <input class="col label-txt" name="num" id="num" type="text" placeholder="7892"></input>
+              <label class="col">
+                <input class="label-txt" name="num" id="num" type="text" placeholder="7892"></input>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-              <label>
-                <input class="col label-txt" name="ed" id="ed" type="text" placeholder="Ed. 4.1 MAR 18"></input>
+              <label class="col" >
+                <input class="label-txt" name="ed" id="ed" type="text" placeholder="Ed. 4.1 MAR 18"></input>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
