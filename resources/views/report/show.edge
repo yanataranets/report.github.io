@@ -550,10 +550,11 @@ doc.table(90, 400,  generateData7(100), headers7, { size: 1 });
 doc.table(90, 450,  generateData8(100), headers8, { size: 1 });
 doc.table(90, 500, generateData9(100), headers9, {size : 100});
 
-        doc.fromHTML($('#trabajorealizado').get(0), 5,560, {
-                         'width':450,
+doc.fromHTML($('#trabajorealizado').get(0), 5,560, {
+                         'width':450
+});
 
-        });
+
 
 
  doc.addHTML(document.body,function() {
