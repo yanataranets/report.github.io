@@ -70,72 +70,75 @@
 
   <br><br><br>
 
-    <div class="form-group trabajorealizado">
-      <h3>Trabajos realizados</h3>
-      <textarea id="trabajosrealizados" name="trabajosrealizados" class="form-control" rows="3" type="text"></textarea>
+    <div class="card" style="width: 100%;" >
+    <div class="card-body">
+      <h3 class="card-title">Trabajos realizados</h3>
+         <textarea style="min-height: 400px;" name="trabajosrealizados" class="form-control card-text" rows="3" type="text"></textarea>
+    </div>
     </div>
 
-  <table className="responsive table col-10 ">
-    <thead className="thead-dark">
-    <tr>
-      <th scope="row" colSpan="2"></th>
-      <th scope="row" colSpan="3">Trabajos en planta</th>
-      <th scope="row" colSpan="4">Dietas y desplazamiento</th>
-    </tr>
-    <tr>
-      <th scope="col">Día</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Horas Entrada</th>
-      <th scope="col">Horas Salida</th>
-      <th scope="col">Horas Servicio</th>
-      <th scope="col">Horas viaje</th>
-      <th scope="col">KM</th>
-      <th scope="col">Comida</th>
-      <th scope="col">Percrocta</th>
-    </tr>
-    </thead>
-    <tbody>
-    <th className="col">
-      <input id="dia" name="dia"></input>
-    </th>
-    <td className="col">
-      <input id="fecha" name="fecha" type="date"></input>
-    </td>
 
-    <td className="col">
-      <input id="horasentrada" name="horasentrada" type="time"></input>
-    </td>
-
-    <td className="col">
-      <input id="horassalida" name="horassalida" type="time"></input>
-    </td>
-
-    <td className="col">
-      <input id="horasservicio" name="horasservicio" type="number"></input>
-    </td>
-
-    <td className="col">
-      <input id="horasviaje" name="horasviaje"></input>
-    </td>
-
-    <td className="col">
-      <input id="km" name="km" type="number"></input>
-    </td>
-
-    <td className="col">
-      <input id="comida" name="comida" type="checkbox" id="scales" name="scales"></input>
-    </td>
-
-    <td className="col">
-      <input id="percrocta" name="percrocta" type="checkbox" id="scales" name="scales"></input>
-    </td>
-    </tbody>
-  </table>
-
-     <table className="table col thead-dark" id="material">
-      <thead className="thead-dark">
+    <table class="table table-striped responsive   " id="my-table" style="width:100%">
+      <thead class="thead-dark">
       <tr>
-        <th className="columndetabla" colSpan="2">Material Suministrado</th>
+        <th scope="row" colSpan="2"></th>
+        <th scope="row" colSpan="3">Trabajos en planta</th>
+        <th scope="row" colSpan="4">Dietas y desplazamiento</th>
+      </tr>
+      <tr>
+        <th scope="col">Día</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Horas Entrada</th>
+        <th scope="col">Horas Salida</th>
+        <th scope="col">Horas Servicio</th>
+        <th scope="col">Horas viaje</th>
+        <th scope="col">KM</th>
+        <th scope="col">Comida</th>
+        <th scope="col">Percrocta</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th className="col">
+        <input id="dia" name="dia" placeholder="día"></input>
+      </th>
+      <td className="col">
+        <input id="fecha" name="fecha" type="date" ></input>
+      </td>
+
+      <td className="col">
+        <input id="horasentrada" name="horasentrada" type="time"  ></input>
+      </td>
+
+      <td className="col">
+        <input id="horassalida" name="horassalida" type="time"  ></input>
+      </td>
+
+      <td className="col">
+        <input id="horasservicio" name="horasservicio" type="number" ></input>
+      </td>
+
+      <td className="col">
+        <input  id="horasviaje" name="horasviaje"  ></input>
+      </td>
+
+      <td className="col">
+        <input id="km" name="km" type="number"  ></input>
+      </td>
+
+      <td className="col">
+        <input   id="comida" name="comida"  ></input>
+      </td>
+
+      <td className="col">
+        <input   id="percrocta" name="percrocta"   ></input>
+      </td>
+      </tbody>
+    </table>
+
+    <table class="table col thead-dark table table-striped responsive  " id="material">
+      <thead class="thead-dark">
+      <tr>
+        <th class="columndetabla" colSpan="2">Material Suministrado</th>
       </tr>
       <tr>
         <th>Cantidad</th>
@@ -145,19 +148,16 @@
       <tbody>
       <tr>
         <td>
-          <input className="" name="cantidad" id="cantidad" type="text" placeholder="Cantidad"></input>
+          <input   className="" name="cantidad" id="cantidad" type="text" placeholder="cantidad" ></input>
         </td>
         <td>
-          <input id="descripcion" name="descripcion" className="form-control"  placeholder="Descripción"></input>
+          <input   id="descripcion" name="descripcion" className="form-control" placeholder="descripcion" ></input>
         </td>
       </tr>
       </tbody>
     </table>
-
-
-    <button className="btn btn-primary" type="submit">Submit</button>
-
-    </form>
+    <button type="submit"  >Submit</button>
+</form>
 
 
 @endsection

@@ -273,13 +273,7 @@ img{
 label{
   padding: 12px;
 }
-input {
-  /*width: 100%;*/
-  padding: 10px;
-  background: transparent;
-  border: none;
-  outline: none;
-}
+
 .line-box {
   /*position: relative;*/
   width: 100%;
@@ -348,7 +342,8 @@ form {
   /*max-width: 820px;*/
   /*margin: 60px auto;*/
   /*background: rgb(245, 245, 245);*/
-  padding: 0px 50px 0px 0px;
+  padding: 0px 50px 0px 50px;
+  margin-top: 55px;
   text-align: center;
   -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
@@ -362,7 +357,7 @@ input {
   width: 100%;
   padding: 10px;
   background: transparent;
-  border: none;
+  border: 1px solid #819fa7;
   outline: none;
 }
 .line-box {
@@ -393,18 +388,19 @@ input:focus + .line-box .line {
   letter-spacing: 1px;
   color: rgb(55, 54, 54);
   transition: ease 0.3s;
+  border: none;
 }
 .label-active {
   top: -3em;
 }
 button {
-  display: flex;
+  align-content: center;
   padding: 12px 24px;
   background: rgb(220, 220, 220);
   font-weight: bold;
   color: rgb(120, 120, 120);
   border: none;
-  outline: none;
+  /*outline: none;*/
   border-radius: 3px;
   cursor: pointer;
   transition: ease 0.3s;
@@ -533,6 +529,9 @@ textarea{
   min-height: 400px;
   background	: url(public/logo.png) center center no-repeat;
 }
+#trabajosrealizados{
+  min-height: 400px;
+}
 
 
 input .diadesemana : disabled{
@@ -607,6 +606,7 @@ input .diadesemana : disabled{
   padding: .7rem .75rem;
   transition: all .3s ease;
   z-index: 10;
+  align-content: center;
 
 }
 .inside-page__btn {
@@ -696,7 +696,7 @@ float: left;
 .card {
   background-color: rgba(0,0,0, .05);
   box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
-  height: 15rem;
+  /*height: 15rem;*/
   position: relative;
   transition: all 1s ease;
   width: 15rem;
@@ -838,3 +838,5 @@ float: left;
 .text{
   color: #819fa7;
 }
+
+
