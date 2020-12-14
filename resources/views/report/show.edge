@@ -107,7 +107,7 @@
     </br>
   </div>
   <div class="row">
-    <input disabled class="col-12 direcion" name="tecnico" id="tecnico" type="text" value="{{report.tecnico}}" />
+    <input disabled class="col-12 direcion" name="tecnico" id="tecnico" type="text" value="{{report.tecnico}}"></input>
   </div>
 
   <br>
@@ -553,9 +553,6 @@ doc.table(90, 500, generateData9(100), headers9, {size : 100});
 doc.fromHTML($('#trabajorealizado').get(0), 5,560, {
                          'width':450
 });
-
-
-
 
  doc.addHTML(document.body,function() {
   console.log('pdf generated');
