@@ -84,7 +84,7 @@
     <div class="card" style="min-height: 400px; width: 100%;   margin-bottom: 60px;" >
         <div class="card-body">
       <h3 class="card-title">Trabajos realizados</h3>
-      <p > {{report.trabajosrealizados}}</p>
+      <p id="trabajosrealizados"> {{report.trabajosrealizados}}</p>
     </div>
     </div>
 
@@ -117,38 +117,38 @@
       </tr>
       </thead>
       <tbody>
-      <th className="col">
+      <th classss="col inputparatabla">
         <input disabled id="dia" name="dia" value="{{report.dia}}"></input>
       </th>
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="fecha" name="fecha" type="date" value="{{report.fecha}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="horasentrada" name="horasentrada" type="time" value="{{report.horasentrada}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="horassalida" name="horassalida" type="time" value="{{report.horassalida}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="horasservicio" name="horasservicio" type="number" value="{{report.horasservicio}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="horasviaje" name="horasviaje" value="{{report.horasviaje}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="km" name="km" type="number" value="{{report.km}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="comida" name="comida" value="{{report.comida}}"></input>
       </td>
 
-      <td className="col">
+      <td class="col inputparatabla">
         <input disabled id="percrocta" name="percrocta"  value="{{report.percrocta}}"></input>
       </td>
       </tbody>
@@ -167,10 +167,10 @@
       <tbody>
       <tr>
         <td>
-          <input disabled className="" name="cantidad" id="cantidad" type="text" value="{{report.cantidad}}"></input>
+          <input disabled class="inputparatabla" name="cantidad" id="cantidad" type="text" value="{{report.cantidad}}"></input>
         </td>
         <td>
-          <input disabled id="descripcion" name="descripcion" className="form-control" value="{{report.descripcion}}"></input>
+          <input disabled id="descripcion" name="descripcion" class="inputparatabla form-control" value="{{report.descripcion}}"></input>
         </td>
       </tr>
       </tbody>
@@ -194,10 +194,13 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   $('#btn-print').live("click", function () {
 var divContents = $("#pdfContent").html();
 var printWindow = window.open('', '', 'height=400,width=800');
-printWindow.document.write('{{css ('print.css')}}')
+printWindow.document.write('{{css ('print.css')}}');
 printWindow.document.write('<html><head><title>Report</title>');
 printWindow.document.write('<body>');
 printWindow.document.write(divContents);
+printWindow.document.write({{firmatecnico.firmatecnico}});
+printWindow.document.write({{firmacliente.firmacliente}});
+
 printWindow.document.write('</body>');
 printWindow.document.close();
 printWindow.print();

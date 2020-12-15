@@ -15,7 +15,7 @@ class CantidaddController {
 
   }
 
-  async store({ request,response }) {
+  async store({ request,response }) {-> $
     const cantidadd = new Cantidadd()
     cantidadd.dia = request.input('dia');
     cantidadd.fecha = request.input('fecha');

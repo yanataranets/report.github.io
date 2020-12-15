@@ -35,56 +35,7 @@ table td, table th {
   /*padding: 9px 10px;*/
   /*text-align: left;*/
 }
-/* Mobile */
-@media only screen and (max-width: 767px) {
-  table.responsive { margin-bottom: 0; }
-  .pinned { position: absolute; top: 0; background: #fff; width: 35%; overflow: visible; overflow-x: scroll; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
-  .pinned table { border-right: none; border-left: none; width: 100%; }
-  .pinned table th, .pinned table td { white-space: nowrap; }
-  .pinned td:last-child { border-bottom: 0; }
-  div.table-wrapper { position: relative; margin-bottom: 20px; overflow: visible; border-right: 1px solid #ccc; }
-  div.table-wrapper div.scrollable { margin-left: 35%; }
-  div.table-wrapper div.scrollable { overflow: scroll;}
-  table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
-  table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
-}
-.form-group{
-  /*width: 80%;*/
-  /*margin-left: auto;*/
-  /*margin-right: auto;*/
-  /*align-content: center;*/
-}
-. form-control{
-  /*width: 100%;*/
-}
-.firma{
-  height: 100px;
-  padding-top: 12%;
-  border: none;
-  padding-left: 0;
-}
-.firmadopor{
-  padding-top: 70px;
-  margin-left: 0;
-}
-img{
-  height: 100px;
-  width: 100px;
-}
-.logo{
-  height: 200px;
-  background: url("images/logo.png") no-repeat;
-}
-.info{
-  padding-left: 30%;
-}
-.info p{
-  margin-top: -20px;
-  margin-bottom: 0;
-}
-.information{
-  padding: 25px;
-}
+
 label{
   padding: 12px;
 }
@@ -510,149 +461,20 @@ input .diadesemana : disabled{
 
 /* A container to hold the flip card and the inside page */
 .card {
-  background-color: rgba(0,0,0, .05);
+
   box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
   height: 15rem;
   position: relative;
   transition: all 1s ease;
-  width: 15rem;
+}
+#trabajosrealizados{
+  width: 700px;
+}
+.table th, .inputparatabla {
+  border: 1px solid #202a51;
 }
 
-/* Flip card - covering both the front and inside front page */
+.table{
 
-/* An outer container to hold the flip card. This excludes the inside page */
-.flip-card {
-  height: 15rem;
-  perspective: 100rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  visibility: hidden;
-  width: 15rem;
-  z-index: 100;
+
 }
-
-/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
-/* This is done so content in the inside page can be selected */
-.flip-card > * {
-  visibility: visible;
-}
-
-/* An inner container to hold the flip card. This excludes the inside page */
-.flip-card__container {
-  height: 100%;
-  position: absolute;
-  right: 0;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  transition: all 1s ease;
-  width: 100%;
-}
-
-.card-front,
-.card-back {
-  backface-visibility: hidden;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* Styling for the front side of the flip card */
-
-/* container for the front side */
-.card-front {
-  background-color: #fafbfa;
-  height: 15rem;
-  width: 15rem;
-}
-
-/* Front side's top section */
-.card-front__tp {
-  align-items: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
-  display: flex;
-  flex-direction: column;
-  height: 12rem;
-  justify-content: center;
-  padding: .75rem;
-}
-
-.card-front__tp--camping {
-  background: linear-gradient(
-    to bottom,
-    #bae2ea,
-    #00b97d
-  );
-}
-
-/* Front card's bottom section */
-.card-front__bt {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-/* Styling for the back side of the flip card */
-
-.card-back {
-  /*background-color: #fafbfa;*/
-  transform: rotateY(180deg);
-}
-
-/* Specifically targeting the <video> element */
-.video__container {
-  /*clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);*/
-  height: auto;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* Inside page */
-
-.inside-page {
-  background-color: #fafbfa;
-  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
-  height: 100%;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  width: 15rem;
-  z-index: 1;
-}
-
-.inside-page__container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  text-align: center;
-  width: 100%;
-}
-
-/* Functionality ====================================*/
-
-/* This is to keep the card centered (within its container) when opened */
-.card:hover {
-  box-shadow:
-    -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.75);
-  width: 30rem;
-}
-
-/* When the card is hovered, the flip card container will rotate */
-.card:hover .flip-card__container {
-  transform: rotateY(-180deg);
-}
-
-/* When the card is hovered, the shadow on the inside page will shrink to the left */
-.card:hover .inside-page {
-  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
-}
-.text{
-  color: #819fa7;
-}
-
-
