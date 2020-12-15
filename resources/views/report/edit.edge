@@ -30,32 +30,32 @@
         {{csrfField()}}
       <div class="container">
         <div class="row ">
-          <label>
-            <input class="col label-txt" name="numerodeproyecto" id="numerodeproyecto" type="text" placeholder="№ DE PROYECTO" />
+          <label class="col">
+            <input class=" label-txt" name="numerodeproyecto" id="numerodeproyecto" type="text" value="{{report.numerodeproyecto}}"/>
             <div class="line-box">
               <div class="line"></div>
             </div>
           </label>
-          <label>
-            <input class="col label-txt" name="algo" type="text" placeholder="Algo" />
+          <label class="col">
+            <input class=" label-txt" name="algo" type="text" value="{{report.algo}} " />
             <div class="line-box">
               <div class="line"></div>
             </div>
           </label>
-          <label>
-            <input class="col label-txt" name="numerodedocumento" id="numerodedocumento" type="text" placeholder="№ DE DOCUMENTO" />
+          <label class="col">
+            <input class=" label-txt" name="numerodedocumento" id="numerodedocumento" type="text" value="{{report.numerodedocumento}} " />
             <div class="line-box">
               <div class="line"></div>
             </div>
           </label>
-          <label>
-            <input class="col label-txt" name="num" id="num" type="text" placeholder="7892" />
+          <label class="col">
+            <input class=" label-txt" name="num" id="num" type="text" value="{{report.num}} " />
             <div class="line-box">
               <div class="line"></div>
             </div>
           </label>
-          <label>
-            <input class="col label-txt" name="ed" id="ed" type="text" placeholder="Ed. 4.1 MAR 18" />
+          <label class="col">
+            <input class=" label-txt" name="ed" id="ed" type="text" value="{{report.ed}} "  />
             <div class="line-box">
               <div class="line"></div>
             </div>
@@ -64,109 +64,110 @@
 
         <div class="row ">
 
-          <input class="col-8 direcion" name="cliente" id="cliente" type="text" placeholder="Cliente" />
-          <input class="col-4 direcion" name="cif" id="cif" type="text" placeholder="CIF" />
-          <input class="col-12 direcion" name="dirrecion" id="direccion" type="text" placeholder="Direccion" />
-          <input class="col-3 direcion" name="codigopostal" id="codigopostal" type="text" placeholder="Código Postal" />
-          <input class="col-9 direcion" name="poblacion" id="poblacion" type="text" placeholder="Población" />
-          <input class="col-9 direcion" name="provincia" id="provincia" type="text" placeholder="Provincia" />
-          <input class="col-3 direcion" name="telefono" id="telefono" type="tel" placeholder="Telefono" />          </div>
+          <input class="col-8 direcion" name="cliente" id="cliente" type="text" value="{{report.cliente}} " />
+          <input class="col-4 direcion" name="cif" id="cif" type="text" value="{{report.cif}} " />
+          <input class="col-12 direcion" name="dirrecion" id="direccion" type="text" value="{{report.dirrecion}} " />
+          <input class="col-3 direcion" name="codigopostal" id="codigopostal" type="text" value="{{report.codigopostal}} " />
+          <input class="col-9 direcion" name="poblacion" id="poblacion" type="text" value="{{report.poblacion}} " />
+          <input class="col-9 direcion" name="provincia" id="provincia" type="text" value="{{report.provincia}} " />
+          <input class="col-3 direcion" name="telefono" id="telefono" type="tel" value="{{report.telefono}} " />          </div>
         <br>
           <br>
           </br>
         </br>
       </div>
       <div class="row">
-        <input class="col-12 direcion" name="tecnico" id="tecnico" type="text" placeholder="Técnico" />
+        <input class="col-12 direcion" name="tecnico" id="tecnico" type="text" value="{{report.tecnico}} " />
       </div>
       <br><br><br>
-        <div class="form-group trabajorealizado">
-          <h3>Trabajos realizados</h3>
-          <textarea id="trabajosrealizados" name="trabajosrealizados" class="form-control" rows="3" type="text"></textarea>
-        </div>
-
-  <table className="responsive table col-10 ">
-    <thead className="thead-dark">
-    <tr>
-      <th scope="row" colSpan="2"></th>
-      <th scope="row" colSpan="3">Trabajos en planta</th>
-      <th scope="row" colSpan="4">Dietas y desplazamiento</th>
-    </tr>
-    <tr>
-      <th scope="col">Día</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Horas Entrada</th>
-      <th scope="col">Horas Salida</th>
-      <th scope="col">Horas Servicio</th>
-      <th scope="col">Horas viaje</th>
-      <th scope="col">KM</th>
-      <th scope="col">Comida</th>
-      <th scope="col">Percrocta</th>
-    </tr>
-    </thead>
-    <tbody>
-    <th className="col">
-      <input id="dia" name="dia"></input>
-    </th>
-    <td className="col">
-      <input id="fecha" name="fecha" type="date"></input>
-    </td>
-
-    <td className="col">
-      <input id="horasentrada" name="horasentrada" type="time"></input>
-    </td>
-
-    <td className="col">
-      <input id="horassalida" name="horassalida" type="time"></input>
-    </td>
-
-    <td className="col">
-      <input id="horasservicio" name="horasservicio" type="number"></input>
-    </td>
-
-    <td className="col">
-      <input id="horasviaje" name="horasviaje"></input>
-    </td>
-
-    <td className="col">
-      <input id="km" name="km" type="number"></input>
-    </td>
-
-    <td className="col">
-      <input id="comida" name="comida" type="checkbox" id="scales" name="scales"></input>
-    </td>
-
-    <td className="col">
-      <input id="percrocta" name="percrocta" type="checkbox" id="scales" name="scales"></input>
-    </td>
-    </tbody>
-  </table>
 
 
-        <table className="table col thead-dark" id="material">
-          <thead className="thead-dark">
-          <tr>
-            <th className="columndetabla" colSpan="2">Material Suministrado</th>
-          </tr>
-          <tr>
-            <th>Cantidad</th>
-            <th>Descripcion</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>
-              <input className="" name="cantidad" id="cantidad" type="text" placeholder="Cantidad"></input>
-            </td>
-            <td>
-              <input id="descripcion" name="descripcion" className="form-control"  placeholder="Descripción"></input>
-            </td>
-          </tr>
-          </tbody>
-          <button id="btn-addline" className="form-control" type="submit" value="Submit"><i>Add line</i></button>
-        </table>
+    <div class="card" style="min-height: 400px; width: 100%;   margin-bottom: 60px;" >
+    <div class="card-body">
+      <h3 class="card-title">Trabajos realizados</h3>
+{{report.trabajosrealizados}}
+    </div>
+    </div>
 
+    <table class="table table-striped responsive   " id="my-table" style="width:100%; margin-bottom: 60px;">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="row" colSpan="2"></th>
+        <th scope="row" colSpan="3">Trabajos en planta</th>
+        <th scope="row" colSpan="4">Dietas y desplazamiento</th>
+      </tr>
+      <tr>
+        <th scope="col">Día</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Horas Entrada</th>
+        <th scope="col">Horas Salida</th>
+        <th scope="col">Horas Servicio</th>
+        <th scope="col">Horas viaje</th>
+        <th scope="col">KM</th>
+        <th scope="col">Comida</th>
+        <th scope="col">Percrocta</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th className="col">
+        <input id="dia" name="dia" value="{{report.día}}"></input>
+      </th>
+      <td className="col">
+        <input id="fecha" name="fecha"  value="{{report.fecha}}" ></input>
+      </td>
 
-        <button class="btn btn-primary" type="submit">Submit</button>
+      <td className="col">
+        <input id="horasentrada" name="horasentrada" type="time"  value="{{report.horasentrada}}"></input>
+      </td>
+
+      <td className="col">
+        <input id="horassalida" name="horassalida" type="time"  value="{{report.horassalida}}"></input>
+      </td>
+
+      <td className="col">
+        <input id="horasservicio" name="horasservicio" type="number" value="{{report.horasservicio}}" ></input>
+      </td>
+
+      <td className="col">
+        <input  id="horasviaje" name="horasviaje" value="{{report.horasviaje}}" ></input>
+      </td>
+
+      <td className="col">
+        <input id="km" name="km" type="number" value="{{report.km}}" ></input>
+      </td>
+
+      <td className="col">
+        <input   id="comida" name="comida" value="{{report.comida}}" ></input>
+      </td>
+
+      <td className="col">
+        <input   id="percrocta" name="percrocta"  value="{{report.percrocta}}" ></input>
+      </td>
+      </tbody>
+    </table>
+
+    <table class="table col thead-dark table table-striped responsive  " id="material">
+      <thead class="thead-dark">
+      <tr>
+        <th class="columndetabla" colSpan="2">Material Suministrado</th>
+      </tr>
+      <tr>
+        <th>Cantidad</th>
+        <th>Descripcion</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input   className="" name="cantidad" id="cantidad" type="text" value="{{report.cantidad}}" ></input>
+        </td>
+        <td>
+          <input   id="descripcion" name="descripcion" className="form-control" value="{{report.descripcion}}" ></input>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+        <button type="submit">Submit</button>
       </form>
       @endsection
