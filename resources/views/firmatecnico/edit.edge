@@ -12,14 +12,26 @@
 {{script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')}}
 
 
+<div class="container firmabox">
+  <div class="row">
+    <div className="col-4">Estoy conforme con los trabajos realizados y la presente figuración
+    <br>
+    Firma tecnico:
+    <br>
+    </div>
+    <div className="col-4">
 
 
 {{csrfField()}}
 <canvas id="painttecnico" width="500" height="400"></canvas>
 <form method="POST" action="/firmatecnico" encType="multipart/form-data">
-    <input id="firmatecnico" name="firmatecnico"/>
+    <input id="firmatecnico" name="firmatecnico" value="{{firmatecnico.firmatecnico}}"/>
     <input type="button" id="clear" name="clear" value="Clean"/>
     <button className="btn btn-primary" id="save" type="submit">Submit</button>
 </form>
+    </div>
+    </div>
+  </div>
+
 
 @endsection

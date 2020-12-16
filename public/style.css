@@ -849,3 +849,6 @@ float: left;
   flex-direction: row;
   justify-content: center;
 }
+#dia{
+  width: 60px;
+}
