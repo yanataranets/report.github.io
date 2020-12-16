@@ -7,52 +7,29 @@
 {{css('style.css')}}
 {{script ('firmatecnico.js')}}
 
-{{script('app.js')}}
+
 {{script('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}
 {{script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}
 {{script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')}}
 
-      <p>
-        Welcome <strong>{{ auth.user.username }}</strong>!
-      </p>
 
 
-         <div class="animateme">
-            <ul class="bg-bubbles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-
-<p>
-  Draw your signature in the box below
-</p>
-
-
-<div className="container">
-  <div className="row">
+<div class="container firmabox">
+  <div class="row">
     <div className="col-4">Estoy conforme con los trabajos realizados y la presente figuración
-      <div className="col-12 firma">Fecha:</div>
+    <br>
+    Firma tecnico:
+    <br>
     </div>
-    <div className="col-4">Firma tecnico:
+    <div className="col-4">
       {{csrfField()}}
       <canvas id="painttecnico" width="500" height="400"></canvas>
       <form method="POST" action="/firmatecnico" encType="multipart/form-data">
-        <input id="firmatecnico" name="firmatecnico"/>
-        <input type="button" id="clear" name="clear" value="Clean"/>
-        <button className="btn btn-primary" id="save" type="submit">Submit</button>
+        <input id="firmatecnico" name="firmatecnico"></input>
+              <button class="firma_btn"  id="clear" name="clear" >Clean</button>
+              <button  class="firma_btn"  id="save" type="submit">Submit</button>
       </form>
+
     </div>
     </div>
   </div>

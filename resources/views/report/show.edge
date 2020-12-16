@@ -6,6 +6,9 @@
 {{css ('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css')}}
 {{css ('style.css')}}
 {{script ('printerpdf.js')}}
+<script  type="text/javascript" src="firmatecnico.js"></script>
+{{script ('firmatecnico.js')}}
+{{script ('fircmacliente.js')}}
 {{script ('https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js')}}
 {{script ('https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js')}}
 {{script ('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js')}}
@@ -81,7 +84,7 @@
     </br>
   </br>
 
-    <div class="card" style="min-height: 400px; width: 100%;   margin-bottom: 60px;" >
+    <div class="card" style="min-height: 400px; width: 100%;  " >
         <div class="card-body">
       <h3 class="card-title">Trabajos realizados</h3>
       <p id="trabajosrealizados"> {{report.trabajosrealizados}}</p>
@@ -97,7 +100,7 @@
     </br>
   </br>
 
-    <table class="table table-striped responsive   " id="my-table" style="width:100%">
+    <table class="table table-striped responsive   " id="my-table">
       <thead class="thead-dark">
       <tr>
         <th scope="row" colSpan="2"></th>
@@ -178,11 +181,30 @@
 
 
 </form>
+
+      <div class="container firmas">
+        <div class="row">
+          <div class="col-4">Estoy conforme con los trabajos realizados y la presente figuración
+            <div class="col-12 firma">Fecha:</div>
+            <br><br><br>
+          </div>
+          <div class="col-4">Firma cliente:
+          <br><br><br>
+            <div class="col-12 firmadopor">Firmado por:
+            </div>
+            <br><br><br>
+          </div>
+          <div class="col-4 firmat">Firma técnico:
+
+          </div>
+
+        </div>
+      </div>
+</div>
+
   <button id="btn-print" style="margin-left: 45%"  >Pdf</button>
 </div>
 
-
-</div>
 
 
 </body>
@@ -191,6 +213,7 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../../../../public/style.css"/>
 
      <script>
+
   $('#btn-print').live("click", function () {
 var divContents = $("#pdfContent").html();
 var printWindow = window.open('', '', 'height=400,width=800');
@@ -198,9 +221,6 @@ printWindow.document.write('{{css ('print.css')}}');
 printWindow.document.write('<html><head><title>Report</title>');
 printWindow.document.write('<body>');
 printWindow.document.write(divContents);
-printWindow.document.write({{firmatecnico.firmatecnico}});
-printWindow.document.write({{firmacliente.firmacliente}});
-
 printWindow.document.write('</body>');
 printWindow.document.close();
 printWindow.print();

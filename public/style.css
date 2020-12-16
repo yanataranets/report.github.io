@@ -840,4 +840,12 @@ float: left;
   color: #819fa7;
 }
 
+.firmabox{
+  margin-top: 70px;
+}
 
+.firma_btn{
+  display: inline-block;
+  flex-direction: row;
+  justify-content: center;
+}

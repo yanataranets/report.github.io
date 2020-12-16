@@ -35,7 +35,7 @@ class FirmatecnicoController {
   }
   async show({view, params }){
     const firmatecnico = await Firmatecnico.find(params.id)
-    return view.render('/report/show', {firmatecnico: firmatecnico});
+    return view.render('/firmatecnico/{{firmatecnico.id}}/show', {firmatecnico: firmatecnico});
   }
 
 

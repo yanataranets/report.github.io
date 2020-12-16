@@ -40,11 +40,10 @@ label{
   padding: 12px;
 }
 input {
-  /*width: 100%;*/
-  padding: 10px;
-  background: transparent;
+  width: 20%;
+
   border: none;
-  outline: none;
+  display: inline-block;
 }
 .line-box {
   /*position: relative;*/
@@ -469,12 +468,14 @@ input .diadesemana : disabled{
 }
 #trabajosrealizados{
   width: 700px;
+  margin-bottom: ;
 }
 .table th, .inputparatabla {
   border: 1px solid #202a51;
 }
 
-.table{
-
+#my-table{
+  /*margin-bottom: 80px;*/
+  /*padding-bottom: 20px;*/
 
 }

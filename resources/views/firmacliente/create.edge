@@ -12,60 +12,21 @@
 {{script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}
 {{script('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')}}
 
-      <p>
-        Welcome <strong>{{ auth.user.username }}</strong>!
-      </p>
 
+<div class="row firmabox">
+  <div class="col-4">Estoy conforme con los trabajos realizados y la presente figuración
 
-
-         <div class="animateme">
-            <ul class="bg-bubbles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
-    <div class="container information">
-        <div class="row">
-          <div class="row col-5 logo">
-          </div>
-          <div class="row col info">
-              <h5>GESCA AUTOMATISMOS S.L.L.</h5>
-                <p>www.gesca.es<br>
-                gesca@gesca.es<br>
-                C/ Soleria, 44 23400 Úbeda (Jáen)<br>
-                /Fax +34 953 751 286 CIF: B23547433</p>
-          </div>
-        </div>
-      </div>
-
-<p>
-  Draw your signature in the box below
-</p>
-<div className="row">
-  <div className="col-4">Estoy conforme con los trabajos realizados y la presente figuración
-    <div className="col-12 firma">Fecha:</div>
   </div>
-  <div className="col-4">Firma cliente:
+  <div class="col-4">Firma cliente:
     {{ csrfField() }}
     <canvas id = "paintcliente" width = "500" height = "400"></canvas>
     <form method = "POST" action = "/firmacliente" enctype = "multipart/form-data">
       <input id="firmacliente"  name = "firmacliente"  />
-      <input  type = "button" id = "clear" name = "clear" value = "Clean" />
-      <button className="btn btn-primary" id="save" type="submit">Submit</button>
+                    <button class="firma_btn"  id="clear" name="clear" >Clean</button>
+                    <button  class="firma_btn"  id="save" type="submit">Submit</button>
+
     </form>
   </div>
-  <div className="col-12 firmadopor">Firmado por:________________________</div>
 </div>
 
 </form>

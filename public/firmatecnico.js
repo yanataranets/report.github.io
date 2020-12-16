@@ -3,7 +3,8 @@ let canvas, tool, context;
 if(window.addEventListener) {
 
   function imgUpdate() {
-    document.getElementById('firmatecnico').value = canvas.toDataURL('image/jpeg');
+    document.getElementById('firmatecnico').value = canvas.toDataURL('image/png');
+    s
   }
 
   function init() {
@@ -79,5 +80,6 @@ if(window.addEventListener) {
     init();
 
   },false);
+
 
 }
