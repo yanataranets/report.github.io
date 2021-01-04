@@ -8,10 +8,10 @@ $(document).ready(function (){
   $('#btn-addline').click(function(e) {
     $('#cantidadadd').append('      <tr>\n' +
       '        <td>\n' +
-      '              <input class="" name="cantidad" id="cantidad" type="text" placeholder="Cantidad" />\n' +
+      '              <input name="cantidad" id="cantidad" type="text" placeholder="cantidad" ></input>>\n' +
       '        </td>\n' +
       '        <td>\n' +
-      '          <textarea class="form-control" name="textarea"></textarea>\n' +
+      '          <input   id="descripcion" name="descripcion" className="form-control" placeholder="descripcion" ></input>\n' +
       '        </td>\n' +
       '      </tr>\n');
   });

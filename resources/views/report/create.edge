@@ -6,6 +6,7 @@
 {{css ('style.css')}}
 
 {{script('app.js')}}
+{{script('index.js')}}
 {{script('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}
 {{script('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')}}
 {{script('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css')}}
@@ -99,7 +100,7 @@
       </thead>
       <tbody>
       <th class="col">
-        <input id="dia" name="dia" placeholder="día"></input>
+        <input id="dia" name="dia" placeholder="dia"></input>
       </th>
       <td class="col">
         <input id="fecha" name="fecha" type="date" ></input>
@@ -135,7 +136,7 @@
       </tbody>
     </table>
 
-    <table class="table col thead-dark table table-striped responsive  " id="material">
+    <table  id="cantidadadd" class="table col thead-dark table table-striped responsive  ">
       <thead class="thead-dark">
       <tr>
         <th class="columndetabla" colSpan="2">Material Suministrado</th>
@@ -146,19 +147,30 @@
       </tr>
       </thead>
       <tbody>
+
       <tr>
-        <td>
-          <input   className="" name="cantidad" id="cantidad" type="text" placeholder="cantidad" ></input>
-        </td>
-        <td>
-          <input   id="descripcion" name="descripcion" className="form-control" placeholder="descripcion" ></input>
-        </td>
+       <td>
+          <input name="cantidad" id="cantidad" type="text" placeholder="cantidad" ></input>
+       </td>
+       <td>
+          <input   id="descripcion" name="descripcion"  placeholder="descripcion" ></input>
+       </td>
       </tr>
+
       </tbody>
+    <a id="btn-addline">Add line</a>
     </table>
     <button type="submit" style="margin: 20px; margin-left: 45%;" >Submit</button>
 </form>
 
+    <script>
+    $(document).ready(function (){
+      $('#btn-addline').click(function(e) {
+        $("#cantidadadd").append("<tr><td><input  >1</input></td> + <td><input  >2</input></td></tr>");
 
+      });
+    });
+    </script>
 @endsection
+
 
