@@ -10,6 +10,7 @@
 {{script('jquery.hideseek.min.js')}}
 <script src="jquery.hideseek.min.js"></script>
 <script src="search.js"></script>
+<script src="moment.js"></script>
 
 
       <div class=" search">
@@ -26,9 +27,16 @@
       <div class="search">
       <h5>Buscar por fecha</h5>
                 <div class=" ">
-                     <input  id="date" type="date" data-toggle="hideseek" data-list=".list"/>
-                </div>
+                     <input  id="date_desde" type="date" data-toggle="hideseek" data-list=".list"/>
+                     <input  id="date_hasta" type="date" data-toggle="hideseek" data-list=".list"/>
+                 </div>
       </div>
+<button id="btn_search">Click</button>
+
+
+
+</script>
+
 
 @each(report in reports)
     <main class="main row list">
@@ -86,7 +94,7 @@
                                 {{report.provincia}}
                                 {{report.tecnico}}
                                 {{report.cif}}
-                                <div id="c">{{report.created_at}}</div>
+                                <div id="report_date" value="{{report.created_at}}"></div>
                                 </div>
                         </div>
                     </div>
@@ -94,5 +102,28 @@
             </section>
         </section>
     </main>
+    <script>
+     $("#btn_search").click(function() {
+
+       let report_date = document.getElementById('report_date').value;
+       let datenew = moment(report_date).format('L');
+
+       let date_desde = document.getElementById('date_desde').value;
+       let datenew_desde = moment(date_desde).format('L');
+
+       let date_hasta = document.getElementById('date_hasta').value;
+       let datenew_hasta = moment(date_hasta).format('L');
+
+   if( datenew > datenew_desde && datenew<datenew_hasta){
+     console.log('show');
+   }else{
+     console.log('hide');
+ }
+
+
+    });
+
+
+    </script>
 @endeach
 @endsection
