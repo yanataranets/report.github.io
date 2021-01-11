@@ -258,7 +258,7 @@ img{
 }
 .logo{
   height: 200px;
-  background: url("images/logo.png") no-repeat;
+  /*background: url("images/logo.png") no-repeat;*/
 }
 .info{
   padding-left: 30%;
@@ -536,7 +536,7 @@ textarea{
 }
 
 
-input .diadesemana : disabled{
+input .diadesemana :disabled{
   background-color: #8bc34a;
 }
 #km{
@@ -851,4 +851,8 @@ float: left;
 }
 #dia{
   width: 60px;
+}
+.search {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }

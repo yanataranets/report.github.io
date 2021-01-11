@@ -12,7 +12,8 @@
 <script src="search.js"></script>
 
 
-      <div class="search-box search">
+      <div class=" search">
+      <h5>Buscar por palabra clave</h5>
           <div class="searchform">
                     <input id="search" id="search" name="search" type="text" data-toggle="hideseek" data-list=".list"/>
                     <div class="close">
@@ -21,30 +22,14 @@
               </div>
           </div>
       </div>
+
       <div class="search">
-          <div id="search_2">
-                    Desde <input  id="date_desde" type="datetime-local"  data-list=".list"/>
-                    Hasta <input  id="date_hasta" type="datetime-local" data-list=".list"/>
-
-          </div>
-
+      <h5>Buscar por fecha</h5>
+                <div class=" ">
+                     <input  id="date" type="date" data-toggle="hideseek" data-list=".list"/>
+                </div>
       </div>
-         <button id="btn_search">Buscar</button>
-<script>
-  $("#btn_search").click(function() {
-  var a;
-    var report_date = document.getElementById('report_date').value;
-    var date_desde = document.getElementById('date_desde').value;
-    var date_hasta = document.getElementById('date_hasta').value;
 
-    if(  report_date > date_desde  &&  report_date < date_hasta ){
-      console.log('yes');
-    } else{
-    console.log('mzfk');
-    }
-
-  });
-</script>
 @each(report in reports)
     <main class="main row list">
         <section class="card-area  ">
@@ -101,7 +86,7 @@
                                 {{report.provincia}}
                                 {{report.tecnico}}
                                 {{report.cif}}
-                                <div id="report_date">{{report.created_at}}</div>
+                                <div id="c">{{report.created_at}}</div>
                                 </div>
                         </div>
                     </div>
