@@ -4,7 +4,7 @@ if(window.addEventListener) {
 
   function imgUpdate() {
     document.getElementById('firmatecnico').value = canvas.toDataURL('image/png');
-    s
+
   }
 
   function init() {

@@ -1,8 +1,6 @@
 
-
 $(document).ready(function(){
-  $('.search').hideseek( );
-
+  $('#search').hideseek( );
 });
  // $('#search').on("_after", function() {
  //   $('.hide_me').hide();

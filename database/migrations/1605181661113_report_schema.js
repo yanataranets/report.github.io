@@ -32,6 +32,8 @@ class ReportsSchema extends Schema {
       table.string('comida')
       table.string('percrocta')
 
+      table.string('fecha_creada')
+
       table.string('cantidad')
       table.string('descripcion')
       table.timestamps()

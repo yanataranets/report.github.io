@@ -73,6 +73,7 @@ class ReportController {
     report.telefono = request.input('telefono');
     report.tecnico = request.input('tecnico');
     report.trabajosrealizados = request.input('trabajosrealizados');
+    report.fecha = request.input('fecha');
 
     report.dia = request.input('dia');
     report.fecha = request.input('fecha');
@@ -86,6 +87,9 @@ class ReportController {
 
     report.cantidad = request.input('cantidad');
     report.descripcion = request.input('descripcion');
+
+
+    report.fecha_creada = request.input('fecha_creada');
 
     report.save();
 

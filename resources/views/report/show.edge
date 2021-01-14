@@ -28,13 +28,13 @@
   <div id="container" class="container">
     <div class="row ">
       <label class="col">
-        <input disabled class="col label-txt" name="numerodeproyecto" id="numerodeproyecto" type="text" value="{{report.numerodeproyecto}}" />
+        <input disabled class="col label-txt" name="numerodeproyecto" id="numerodeproyecto" type="text" value="{{report.numerodeproyecto}}" ></input>
         <div class="line-box">
           <div class="line"></div>
         </div>
       </label>
       <label class="col">
-        <input disabled class="col label-txt" name="algo" type="text" value="{{report.algo}}"></input>
+        <input disabled class="col label-txt" name="algo" id="algo" type="text" value="{{report.algo}}"></input>
         <div class="line-box">
           <div class="line"></div>
         </div>
@@ -186,6 +186,7 @@
         <div class="row">
           <div class="col-4">Estoy conforme con los trabajos realizados y la presente figuración
             <div class="col-12 firma">Fecha:</div>
+            <input disabled id="fecha" name="fecha" type="date" value="{{report.fecha}}">{{report.fecha}}</input>
             <br><br><br>
           </div>
           <div class="col-4">Firma cliente:
